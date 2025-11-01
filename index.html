@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{ --army:#4b5320; --black:#000; }
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto}
+        body{
+            background: linear-gradient(135deg,var(--army) 0%, var(--black) 100%);
+            color:#fff;
+            -webkit-font-smoothing:antialiased;
+        }
+
+        .hero{ min-height:100vh; display:flex; align-items:center; justify-content:center; padding:2rem; }
+
+        .card{
+            width:100%; max-width:1100px;
+            display:flex; overflow:hidden; border-radius:12px;
+            background: rgba(0,0,0,0.18);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+        }
+
+        .content{ padding:3rem; flex:1 1 60%; }
+        h1{ margin:0 0 .5rem 0; font-size:clamp(1.6rem, 4vw, 3rem); letter-spacing:0.5px; }
+        .subtitle{ color:#d6d6c2; margin-bottom:1rem; font-weight:600; }
+        .bio{ margin:0 0 1.25rem 0; color:#e6e6e0; line-height:1.5; }
+
+        .cta{ display:flex; gap:.75rem; flex-wrap:wrap; }
+        .btn{ padding:.7rem 1.1rem; border-radius:8px; border:0; cursor:pointer; font-weight:600; }
+        .btn-primary{ background:#fff; color:#000; }
+        .btn-secondary{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.12); }
+
+        .right{ flex:0 0 40%; min-width:260px; display:flex; align-items:center; justify-content:center; padding:1.5rem;
+            background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.28)); }
+        .profile-img{ width:100%; max-width:320px; aspect-ratio:4/5; object-fit:cover; border-radius:12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6); border:4px solid rgba(255,255,255,0.04); }
+
+        @media (max-width:900px){
+            .card{ flex-direction:column-reverse; }
+            .content{ padding:2rem; }
+            .right{ padding:1rem; }
+        }
+
+        /* portfolio styles (inserted after main styles) */
+        .portfolio{ width:100%; max-width:1100px; margin:2rem auto 4rem; padding:1.5rem; color:#fff; }
+        .projects{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; align-items:start; }
+        .project{ background:rgba(255,255,255,0.03); padding:1rem; border-radius:10px; display:flex; flex-direction:column; gap:.75rem; }
+        .thumb{ width:100%; height:160px; object-fit:cover; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.5); }
+        .proj-meta h3{ margin:.25rem 0; font-size:1.05rem; }
+        .proj-desc{ margin:0 0 .5rem 0; color:#dcdccf; font-size:.95rem; line-height:1.3; }
+
+        @media (max-width:900px){
+            .projects{ grid-template-columns:repeat(1,1fr); }
+        }
+
+        /* footer styles */
+        .site-footer{
+            width:100%; max-width:1100px; margin:2rem auto 3rem; padding:1rem 1.25rem;
+            display:flex; align-items:center; justify-content:space-between; gap:1rem;
+            color:#dcdccf; background:rgba(0,0,0,0.12); border-radius:10px;
+            border-top:1px solid rgba(255,255,255,0.04);
+        }
+        .site-footer p{ margin:0; font-size:.95rem; }
+        .site-footer a{ color:var(--army); text-decoration:none; font-weight:600; margin-left:.5rem; }
+        .site-footer .footer-links{ display:flex; gap:0.75rem; align-items:center; }
+        @media (max-width:600px){
+            .site-footer{ flex-direction:column; text-align:center; }
+            .site-footer .footer-links{ justify-content:center; }
+        }
+    </style>
+</head>
+<body>
+    <main class="hero" role="main" aria-labelledby="name-heading">
+        <section class="card">
+            <div class="content">
+                <h1 id="name-heading">Jobi E. Funsho</h1>
+                <div class="subtitle">Content Creator • Storyteller • Social Media</div>
+                <p class="bio">I craft audience-first content across video. Skilled in content shooting, directing, strategy, editing. Open to collaborations, brand partnerships, and freelance projects.</p>
+
+                <div class="cta">
+                    <button class="btn btn-primary" onclick="location.href='mailto:you@example.com'">Contact Me</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">View Work</button>
+                </div>
+            </div>
+
+            <aside class="right" aria-hidden="false">
+                <img src="assets/Pro shot.png" alt="Profile photo" class="profile-img">
+            </aside>
+        </section>
+        </section>
+     </main>
+
+    <!-- Portfolio section: 3 projects (videos) — moved below the hero -->
+    <section id="portfolio" class="portfolio" aria-labelledby="portfolio-heading" tabindex="-1">
+        <h2 id="portfolio-heading" style="margin-top:2rem;">Selected Work</h2>
+        <div class="projects">
+            <article class="project">
+                <img class="thumb" src="assets/thumb1.jpg" alt="Project 1 thumbnail">
+                <div class="proj-meta">
+                    <h3>Campaign: Summer Launch</h3>
+                    <p class="proj-desc">Short-form campaign video for brand launch — directing, shoot, edit.</p>
+                    <a class="btn btn-secondary" href="assets/video1.mp4" target="_blank" rel="noopener">Watch</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <img class="thumb" src="assets/thumb2.jpg" alt="Project 2 thumbnail">
+                <div class="proj-meta">
+                    <h3>Documentary Short</h3>
+                    <p class="proj-desc">3-minute documentary — story, interview direction, post-production.</p>
+                    <a class="btn btn-secondary" href="assets/video2.mp4" target="_blank" rel="noopener">Watch</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <img class="thumb" src="assets/thumb3.jpg" alt="Project 3 thumbnail">
+                <div class="proj-meta">
+                    <h3>Social Series</h3>
+                    <p class="proj-desc">Multi-episode social series — concept, shoot, edit, and analytics.</p>
+                    <a class="btn btn-secondary" href="assets/video3.mp4" target="_blank" rel="noopener">Watch</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- end portfolio -->
+
+    <footer class="site-footer" role="contentinfo">
+        <p>© 2025 Jobi E. Funsho — Content Creator. <a href="mailto:you@example.com">you@example.com</a></p>
+        <nav class="footer-links" aria-label="Footer links">
+            <a class="btn btn-secondary" href="#portfolio" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">Work</a>
+            <a class="btn btn-secondary" href="#name-heading" onclick="document.getElementById('name-heading').focus()">Top</a>
+        </nav>
+    </footer>
+ </body>
+ </html>
